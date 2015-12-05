@@ -1,0 +1,16 @@
+<section data-ng-controller="FeedsController" data-ng-init="findOne()">
+  <h1 data-ng-bind="feed.title"></h1>
+  <div data-ng-show="authentication.user._id == feed.creator._id">
+    <a href="/#!/feeds/{{feed._id}}/edit">edit</a>
+    <a href="#" data-ng-click="delete();">delete</a>
+    <a href="/#!">go back</a>
+ 
+  </div>
+  <small>
+    <em>Posted on</em>
+    <em data-ng-bind="feed.created | date:'mediumDate'"></em>
+    <em>by</em>
+    <em data-ng-bind="feed.creator.fullName"></em>
+  </small>
+  <p data-ng-bind="feed.content"></p>
+</section>

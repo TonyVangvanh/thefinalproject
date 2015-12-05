@@ -1,0 +1,16 @@
+<section data-ng-controller="FeedsController" data-ng-init="find()">
+  <h1>Post</h1>
+  <ul>
+    <li data-ng-repeat="feed in feeds">
+      <a data-ng-href="#!/feeds/{{feed._id}}" data-ng-bind="feed.title"></a>
+      <br>
+      <small data-ng-bind="feed.created | date:'medium'"></small>
+      <small>/</small>
+      <small data-ng-bind="feed.creator.fullName"></small>
+      <p data-ng-bind="feed.content"></p>
+    </li>
+  </ul>
+ <div data-ng-hide="!feeds || feeds.length">
+    Create a new post <a href="/#!/feeds/create">create one</a>?
+  </div>
+</section>

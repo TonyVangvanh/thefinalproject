@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+	<title><%= title %></title>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+</head>
+<body>
+
+	<% for(var i in messages) { %>
+	   <div class="flash"><%= messages[i] %></div>
+	<% } %>
+
+<div class="jumbotron">
+<form class="form-horizontal" role="form" method="POST" action="/signin">
+  <div class = "form-group">
+
+
+	  <div class = "form-group">
+      <label for = "username">Username:</label>
+      <input type = "text" class = "form-control" name = "username" placeholder = "Username" required>
+       </div>
+	
+
+    	 <div class = "form-group">
+      <label for = "password">Password:</label>
+      <input type = "password" class = "form-control" name = "password" placeholder = "Password" required>
+      </div>
+			
+	<button type="Sign In" class="btn btn-primary btn-md">Submit</button>
+	<a href="https://tonyfinals-tonyvangvanh.c9users.io/#!/" class="btn btn-primary active"><i class="icon-white icon-home"></i> Cancel</a>
+
+		</div>
+	</form>
+
+
+<a href="/oauth/facebook" class="btn btn-primary"><span class="fa fa-facebook-official"></span> Sign in with Facebook</a>
+<a href="/oauth/twitter" class="btn btn-info"><span class="fa fa-twitter-square"></span> Sign in with Twitter</a>
+<a href="/oauth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Sign in with Google+</a>
+
+</body>
+</html>

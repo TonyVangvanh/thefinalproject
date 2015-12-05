@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org">
+<head>
+
+	<title><%= title %></title>
+</head>
+<body>
+	<!-- Render AngularJS views  -->
+	<section ng-view></section>
+
+	<!-- Render the user object -->
+	<script type="text/javascript">
+		window.user = <%- user || 'null' %>;
+	</script>
+	
+	<script type="text/javascript" src="/lib/angular/angular.js"></script>
+	<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+
+	<script type="text/javascript" src="/feeds/feeds.client.module.js"></script>
+	<script type="text/javascript" src="/feeds/controllers/feeds.client.controller.js"></script>
+	<script type="text/javascript" src="/feeds/services/feeds.client.service.js"></script>
+	<script type="text/javascript" src="/feeds/config/feeds.client.routes.js"></script>	
+
+	
+	<script type="text/javascript" src="/gamerpad/gamerpad.client.module.js"></script>
+	<script type="text/javascript" src="/gamerpad/controllers/gamerpad.client.controller.js"></script>
+	<script type="text/javascript" src="/gamerpad/config/gamerpad.client.routes.js"></script>
+
+	<!-- Load the users module -->
+	<script type="text/javascript" src="/users/users.client.module.js"></script>
+	<script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
+
+	<!-- Bootstrap AngularJS application -->
+	<script type="text/javascript" src="/application.js"></script>
+</body>
+</html>
